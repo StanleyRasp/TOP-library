@@ -1,0 +1,82 @@
+.add-popup{
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    display: none;
+}
+
+.add-popup *{
+    border: none;
+}
+
+.add-popup .title{
+    margin-bottom: 1rem;
+}
+
+.add-popup form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.add-popup label{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.add-popup input, .add-popup textarea{
+    background-color: #eee;    
+    border-radius: 10px;
+    padding: .5em;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .25);
+}
+
+.add-popup input:focus, .add-popup textarea:focus{
+    outline: none;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, .25);
+    background-color: #ddd;
+}
+
+.add-popup #title{
+    font-size: 1.5rem;
+}
+
+.form-field > *{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.add-popup button{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    background-color: #40972e;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .25);
+}
+
+.add-popup button .button-content{
+    display: block;
+}
+
+.add-popup button:hover{
+    box-shadow: none;
+}
+
+.add-popup button:hover .button-content{
+    transform: scale(.95);
+}
+
+.add-popup button:active{
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .25) inset;
+}
+
+.add-popup button:active .button-content{ 
+    transform: scale(.9);
+}

@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="styles/header-style.css">
     <link rel="stylesheet" href="styles/main-style.css">
     <link rel="stylesheet" href="styles/add-button-style.css">
+    <link rel="stylesheet" href="styles/add-popup-style.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
     <title>Library</title>
 </head>
 
@@ -155,6 +156,26 @@
         <span class="material-symbols-outlined icon">
             add
         </span>
+    </div>
+    <div class="popup-dimmer">
+        <div class="add-popup">
+            <form action="#" method="post">
+                <h2 class="title">Add a new book</h2>
+                <div class="form-field">
+                    <label for="title">Book Title</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="form-field">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="links">Where to buy?</label>
+                    <input type="text" name="links" id="links">
+                </div>
+                <button id="submit-form"><span class="button-content">Add</span></button>
+            </form>
+        </div>
     </div>
 </body>
 
