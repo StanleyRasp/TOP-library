@@ -7,7 +7,6 @@
     font-family: Ubuntu;
     font-weight: 300;
     box-sizing: border-box;
-    transition: all 100ms;
     max-height: 100%;
     max-width: 100%;
 }
@@ -31,5 +30,9 @@ h3{
 
 .title{
     font-weight: 400;
+}
+
+.icon{
+    display: block;
 }
 

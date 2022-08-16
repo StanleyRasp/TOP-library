@@ -15,9 +15,8 @@
 .add-button .icon{
     font-size: 4rem;
     user-select: none;
-    transition: transform 0s;
 }
 
-.add-button .icon:hover{
+.add-button:hover .icon{
     transform: scale(.9)
 }
