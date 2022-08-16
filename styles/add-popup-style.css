@@ -50,33 +50,8 @@
 
 .add-popup button{
     margin-top: 1rem;
-    font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    border-radius: 10px;
-    text-transform: uppercase;
     padding: 1rem 0;
     background-color: #40972e;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .25);
-}
-
-.add-popup button .button-content{
-    display: block;
-}
-
-.add-popup button:hover{
-    box-shadow: none;
-}
-
-.add-popup button:hover .button-content{
-    transform: scale(.95);
-}
-
-.add-popup button:active{
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .25) inset;
-}
-
-.add-popup button:active .button-content{ 
-    transform: scale(.9);
 }

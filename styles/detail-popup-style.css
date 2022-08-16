@@ -1,0 +1,37 @@
+.details-popup{
+    max-width: 40vw;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.details-popup * {
+    user-select: text;
+}
+
+.details-popup .title{
+    font-weight: 700;
+}
+
+.details-popup .description {
+    line-height: 1.2em;
+}
+
+.buttons{
+    display: flex;
+    gap: 2rem;
+}
+
+.buttons > button{
+    color: white;
+    padding: .5rem 2rem;
+    background-color: #40972e;
+}
+
+.buttons .close{
+    background-color: #ddd;
+    color: black;
+}
