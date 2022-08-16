@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header-style.css">
+    <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Library</title>
 </head>
@@ -22,74 +23,100 @@
     <main class="content">
         <div class="column">
             <h2 class="title section-title">To Read</h2>
-            <div class="book-card">
-                <h3 class="title book-title">Atomic Habits</h3>
-                <div class="description book-description">Descrines the power small habits have on our life's direction</div>
-                <div class="card-row">
-                    <div class="tick">
-                        <button class="tick not-read-tick">X</button>
-                        <div class="state-description">Not read yet</div>
+            <div class="cards">
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick"><span class="tick-content" style="display: block;">X</span></button>
+                            <div class="state-description">Not read yet</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
                     </div>
-                    <div class="date">Added on: 16.08.2022</div>
                 </div>
-            </div>
-            <div class="book-card">
-                <h3 class="title book-title">Atomic Habits</h3>
-                <div class="description book-description">Descrines the power small habits have on our life's direction</div>
-                <div class="card-row">
-                    <div class="tick">
-                        <button class="tick not-read-tick">X</button>
-                        <div class="state-description">Not read yet</div>
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick"><span class="tick-content" style="display: block;">X</span></button>
+                            <div class="state-description">Not read yet</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
                     </div>
-                    <div class="date">Added on: 16.08.2022</div>
                 </div>
-            </div>
-            <div class="book-card">
-                <h3 class="title book-title">Atomic Habits</h3>
-                <div class="description book-description">Descrines the power small habits have on our life's direction</div>
-                <div class="card-row">
-                    <div class="tick">
-                        <button class="tick not-read-tick">X</button>
-                        <div class="state-description">Not read yet</div>
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick"><span class="tick-content" style="display: block;">X</span></button>
+                            <div class="state-description">Not read yet</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
                     </div>
-                    <div class="date">Added on: 16.08.2022</div>
                 </div>
+                <div class="add-new-book">Add a new book +</div>
             </div>
-            <div class="add-new-card">Add a new book +</div>
         </div>
         <div class="column">
             <h2 class="title section-title">Already Read</h2>
-            <div class="book-card">
-                <h3 class="title book-title">Atomic Habits</h3>
-                <div class="description book-description">Descrines the power small habits have on our life's direction</div>
-                <div class="card-row">
-                    <div class="tick">
-                        <button class="tick not-read-tick">✓</button>
-                        <div class="state-description">Not read yet</div>
+            <div class="cards read">
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick read-tick"><span class="tick-content" style="display: block;">✓</span></button>
+                            <div class="state-description">Read</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
                     </div>
-                    <div class="date">Added on: 16.08.2022</div>
                 </div>
-            </div>
-            <div class="book-card">
-                <h3 class="title book-title">Atomic Habits</h3>
-                <div class="description book-description">Descrines the power small habits have on our life's direction</div>
-                <div class="card-row">
-                    <div class="tick">
-                        <button class="tick not-read-tick">✓</button>
-                        <div class="state-description">Not read yet</div>
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick read-tick"><span class="tick-content" style="display: block;">✓</span></button>
+                            <div class="state-description">Read</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
                     </div>
-                    <div class="date">Added on: 16.08.2022</div>
                 </div>
-            </div>
-            <div class="book-card">
-                <h3 class="title book-title">Atomic Habits</h3>
-                <div class="description book-description">Descrines the power small habits have on our life's direction</div>
-                <div class="card-row">
-                    <div class="tick">
-                        <button class="tick not-read-tick">✓</button>
-                        <div class="state-description">Not read yet</div>
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick read-tick"><span class="tick-content" style="display: block;">✓</span></button>
+                            <div class="state-description">Read</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
                     </div>
-                    <div class="date">Added on: 16.08.2022</div>
+                </div>
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick read-tick"><span class="tick-content" style="display: block;">✓</span></button>
+                            <div class="state-description">Read</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <h3 class="title book-title">Atomic Habits</h3>
+                    <div class="description book-description">Describes the power small habits have on our life's direction</div>
+                    <div class="card-row">
+                        <div class="tick-container">
+                            <button class="tick read-tick"><span class="tick-content" style="display: block;">✓</span></button>
+                            <div class="state-description">Read</div>
+                        </div>
+                        <div class="date">Added on: 16.08.2022</div>
+                    </div>
                 </div>
             </div>
         </div>
