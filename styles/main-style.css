@@ -19,8 +19,8 @@ main{
     padding: .5rem 1rem 1rem .5rem;
 }
 
-.read{
-    opacity: .5;
+.column .section-title{
+    width: calc(max(340px, 25vw) + 24px);
 }
 
 .book-card{
@@ -38,6 +38,10 @@ main{
 .book-card:hover{
     box-shadow: 6px 6px 6px 0 rgba(0, 0, 0, .25);
     transform: scale(1.01);
+}
+
+.read.cards .book-card{
+    opacity: 0.5;
 }
 
 .read .book-card{

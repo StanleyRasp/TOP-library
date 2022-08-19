@@ -17,19 +17,49 @@
     <link rel="stylesheet" href="styles/main-style.css">
     <link rel="stylesheet" href="styles/add-button-style.css">
     <link rel="stylesheet" href="styles/add-popup-style.css">
-    <link rel="stylesheet" href="styles/detail-popup-style.css">
+    <link rel="stylesheet" href="styles/details-popup-style.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" defer></script>
     <title>Library</title>
 </head>
 
 <body>
+    <div class="templates">
+        <div class="not-read book-card">
+            <h3 class="title book-title">Book Title</h3>
+            <div class="description book-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus neque risus, a sollicitudin diam ornare sit amet. Quisque vehicula dui sed sem hendrerit interdum. Aenean id ante ut nunc pharetra rhoncus a feugiat mi. Quisque nulla dolor, condimentum vitae finibus nec, porta at nisi. Fusce posuere ac ligula a ultricies. Curabitur quis condimentum magna. Aenean at leo lectus. Cras velit tellus, maximus at sapien eu, laoreet lacinia ipsum. Pellentesque vitae ante enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div class="card-row">
+                <div class="tick-container">
+                    <button class="tick read-tick">
+                        <span class="material-symbols-outlined icon">check</span>
+                    </button>
+                    <div class="state-description">Read</div>
+                </div>
+                <div class="date">Added on: 16.08.2022</div>
+            </div>
+        </div>
+        <div class="read book-card">
+            <h3 class="title book-title">Atomic Habits</h3>
+            <div class="description book-description">Describes the power small habits have on our life's
+                direction</div>
+            <div class="card-row">
+                <div class="tick-container">
+                    <button class="tick"><span class="material-symbols-outlined icon">
+                            close
+                        </span></button>
+                    <div class="state-description">Not read yet</div>
+                </div>
+                <div class="date">Added on: 16.08.2022</div>
+            </div>
+        </div>
+        <div class="add-popup-opener add-new-book">Add a new book +</div>
+    </div>
     <header class="header">
         <h1 class="title"><span style="font-weight: 300;"><u><a href="https://www.theodinproject.com/" target="_blank">TOP</a></u> Project: </span><span
                 style="font-weight: 700;">TODO Library</span></div>
     </header>
     <main class="content">
-        <div class="column">
+        <div class="unread column">
             <h2 class="title section-title">To Read</h2>
             <div class="cards">
                 <div class="book-card">
@@ -74,10 +104,10 @@
                         <div class="date">Added on: 16.08.2022</div>
                     </div>
                 </div>
-                <div class="add-new-book">Add a new book +</div>
+                <div class="add-popup-opener add-new-book">Add a new book +</div>
             </div>
         </div>
-        <div class="column">
+        <div class="read column">
             <h2 class="title section-title">Already Read</h2>
             <div class="cards read">
                 <div class="book-card">
@@ -153,14 +183,14 @@
             </div>
         </div>
     </main>
-    <div class="add-button">
+    <div class="add-popup-opener add-button">
         <span class="material-symbols-outlined icon">
             add
         </span>
     </div>
     <div class="popup-dimmer">
         <div class="add-popup">
-            <form action="#" method="post">
+            <form class="add-book-form" action="#" method="post">
                 <h2 class="title">Add a new book</h2>
                 <div class="form-field">
                     <label for="title">Book Title</label>
@@ -171,10 +201,10 @@
                     <textarea name="description" id="description" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-field">
-                    <label for="links">Where to buy?</label>
-                    <input type="text" name="links" id="links">
+                    <label for="link">Where to buy?</label>
+                    <input type="text" name="link" id="link">
                 </div>
-                <button id="submit-form"><span class="button-content">Add</span></button>
+                <button type="button" id="submit-form" ><span class="button-content">Add</span></button>
             </form>
         </div>
         <div class="details-popup">
@@ -182,7 +212,7 @@
             <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium accumsan mi, sed auctor sem cursus maximus. Integer ante mi, feugiat ut feugiat vel, vehicula non odio. Vestibulum finibus elementum leo, eget bibendum elit dictum at. Suspendisse ex ipsum, hendrerit auctor orci ac, auctor rutrum dolor. In tincidunt arcu sapien, et aliquet est tincidunt ac. Sed purus est, suscipit vel ante sed, ullamcorper porta ligula. In non enim orci. Proin pharetra euismod nibh sed vehicula. Integer nec sapien aliquet, lacinia ex id, pellentesque purus. Donec eu blandit orci. Etiam egestas pellentesque eros ac iaculis. Nulla rhoncus libero a risus euismod congue.</div>
             <div class="links"><a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299" target="_blank">https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299</a></div>
             <div class="buttons">
-                <button class="close"><span class="button-content">Close</span></button>
+                <button class="close" onclick="closePopups()"><span class="button-content">Close</span></button>
                 <button class="buy"><span class="button-content">Buy</span></button>
             </div>
         </div>

@@ -3,9 +3,11 @@
     background-color: white;
     padding: 3rem;
     border-radius: 10px;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    transform: scale(0);
+    transition: transform 500ms;
 }
 
 .details-popup * {

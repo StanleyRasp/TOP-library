@@ -17,6 +17,10 @@ body{
     height: 100vh;
 }
 
+.templates{
+    display: none;
+}
+
 h1{
     font-size: 2rem;
 }
@@ -49,13 +53,13 @@ a:visited{
     position:absolute;
     top:0;
     left:0;
-    height:100vh;
+    height:0vh;
     width:100vw;
     background-color: rgba(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 200ms;
+    transition: height 500ms;
 }
 
 button{

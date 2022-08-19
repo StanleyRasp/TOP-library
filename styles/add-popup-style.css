@@ -2,7 +2,9 @@
     background-color: white;
     padding: 3rem;
     border-radius: 10px;
-    display: none;
+    display: block;
+    transform: scale(0);
+    transition: transform 500ms;
 }
 
 .add-popup *{
