@@ -19,6 +19,13 @@ let readBookList = [];
 let popupIsOpen = false;
 let nextID = 1;
 
+// Support functions
+let padNumber = (width, number, padding) =>{
+    let paddedNumber = String(number);
+    while (paddedNumber.length < width) paddedNumber = padding + paddedNumber;
+    return paddedNumber;
+}
+
 // Book object
 function Book(){
     this.id = -1;
@@ -27,7 +34,7 @@ function Book(){
     this.link = "https://amazon.com";
         
     let today = new Date();
-    this.date = `${today.getDate()}.${today.getMonth()}.${today.getFullYear()}`
+    this.date = `${padNumber(2, today.getDate(), "0")}.${padNumber(2, today.getMonth(), 0)}.${today.getFullYear()}`
     this.read = false;
 }
 
@@ -87,7 +94,7 @@ let createNewCard = (book) => {
     let bookCard = book.read ? readCardTemp.cloneNode(true) : notReadCardTemp.cloneNode(true);
     bookCard.querySelector("h3").innerText = book.title;
     bookCard.querySelector(".description").innerText = book.description;
-    bookCard.querySelector(".date").innerText = book.date;
+    bookCard.querySelector(".date").innerText = `Added on: ${book.date}`;
     return bookCard;
 }
 
@@ -108,7 +115,19 @@ let updateBookList = () => {
         readCards.appendChild(bookCard);
     }
 
-    unreadCards.appendChild(qs(".templates .add-new-book"));
+    unreadCards.appendChild(qs(".templates .add-new-book").cloneNode(true));
+
+    for (let button of qsa(".add-popup-opener")){
+        button.addEventListener("click", (event) => {
+            openAddPopup();
+        })
+    }
+
+    for (let card of qsa(".book-card")){
+        card.addEventListener("click", (event) => {
+            openDetailsPopup();
+        })
+    }
 }
 
 // Set up function runs at the beginning to set up things such as eventListeners
@@ -129,19 +148,7 @@ let setup = () => {
         closePopups();
     })
 
-    for (let button of qsa(".add-popup-opener")){
-        button.addEventListener("click", (event) => {
-            console.log(event);
-            openAddPopup();
-        })
-    }
-
-    for (let card of qsa(".book-card")){
-        card.addEventListener("click", (event) => {
-            console.log(event);
-            openDetailsPopup();
-        })
-    }
+    updateBookList();
 }
 
 setup();
