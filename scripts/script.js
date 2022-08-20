@@ -26,6 +26,46 @@ let padNumber = (width, number, padding) =>{
     return paddedNumber;
 }
 
+let bookComperator = (a, b) => {
+    if (a.timestamp < b.timestamp){
+        return 1;
+    } else if (a.timestamp > b.timestamp){
+        return -1;
+    }
+    return 0;
+}
+
+let findBook = (event) => {
+    let selectedBook;
+    if (event.path.indexOf(qs(".unread .cards")) > -1){
+        let cardsIndex = event.path.indexOf(qs(".unread .cards"));
+        selectedBook = unreadBookList[event.path[cardsIndex-1].dataset.index]
+    } else {
+        let cardsIndex = event.path.indexOf(qs(".read .cards"));
+        selectedBook = readBookList[event.path[cardsIndex-1].dataset.index]
+    }
+    return selectedBook;
+}
+
+let switchBook = (event, unreadBookList, readBookList) => {
+    if (event.path.indexOf(qs(".unread .cards")) > -1){
+        let cardsIndex = event.path.indexOf(qs(".unread .cards"));
+        let bookIndex = event.path[cardsIndex-1].dataset.index;
+        unreadBookList[bookIndex].read = true;
+        readBookList.push(unreadBookList.splice(bookIndex, 1)[0])
+    } else {
+        let cardsIndex = event.path.indexOf(qs(".read .cards"));
+        let bookIndex = event.path[cardsIndex-1].dataset.index;
+        readBookList[bookIndex].read = false;
+        unreadBookList.push(readBookList.splice(bookIndex, 1)[0])
+    }
+
+    readBookList.sort(bookComperator);
+    unreadBookList.sort(bookComperator);
+
+    return [unreadBookList, readBookList];
+}
+
 // Book object
 function Book(){
     this.id = -1;
@@ -35,6 +75,7 @@ function Book(){
         
     let today = new Date();
     this.date = `${padNumber(2, today.getDate(), "0")}.${padNumber(2, today.getMonth(), 0)}.${today.getFullYear()}`
+    this.timestamp = Date.now();
     this.read = false;
 }
 
@@ -132,17 +173,16 @@ let updateBookList = () => {
     }
 
     for (let card of qsa(".book-card")){
+        let tickClick = false;
+        card.querySelector(".tick").addEventListener("click", (event) => {
+            tickClick = true;
+            [unreadBookList, readBookList] = switchBook(event, unreadBookList, readBookList);
+            updateBookList();
+        })
+        
         card.addEventListener("click", (event) => {
-            let selectedBook;
-            if (event.path.indexOf(qs(".unread .cards")) > -1){
-                let index = event.path.indexOf(qs(".unread .cards"));
-                selectedBook = unreadBookList[event.path[index-1].dataset.index]
-            } else {
-                let index = event.path.indexOf(qs(".read .cards"));
-                selectedBook = readBookList[event.path[index-1].dataset.index]
-            }
-
-            openDetailsPopup(selectedBook);
+            if (!tickClick) openDetailsPopup(findBook(event));
+            tickClick = false;
         })
     }
 }
