@@ -40,12 +40,9 @@ main{
     transform: scale(1.01);
 }
 
-.read.cards .book-card{
-    opacity: 0.5;
-}
-
 .read .book-card{
     background-color: #eee;
+    opacity: 0.5;
 }
 
 .read .book-title{

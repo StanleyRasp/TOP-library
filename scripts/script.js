@@ -69,7 +69,13 @@ let openAddPopup = () => {
 }
 
 // Opens the popup containing details about a book
-let openDetailsPopup = () => {
+let openDetailsPopup = (book) => {
+    detailsPopup.querySelector(".title").innerText = book.title;
+    detailsPopup.querySelector(".description").innerText = book.description;
+    detailsPopup.querySelector("a").innerText = book.link;
+    detailsPopup.querySelector("a").href = book.link;
+    detailsPopup.querySelector(".buy").addEventListener("click",() => {window.open(book.link)});
+
     popupDimmer.style.height = "100vh";
     detailsPopup.style.display = "flex";
 
@@ -107,11 +113,13 @@ let updateBookList = () => {
 
     for (let book of unreadBookList){
         let bookCard = createNewCard(book);
+        bookCard.dataset.index = unreadBookList.indexOf(book);
         unreadCards.appendChild(bookCard);
     }
 
     for (let book of readBookList){
         let bookCard = createNewCard(book);
+        bookCard.dataset.index = readBookList.indexOf(book);
         readCards.appendChild(bookCard);
     }
 
@@ -125,7 +133,16 @@ let updateBookList = () => {
 
     for (let card of qsa(".book-card")){
         card.addEventListener("click", (event) => {
-            openDetailsPopup();
+            let selectedBook;
+            if (event.path.indexOf(qs(".unread .cards")) > -1){
+                let index = event.path.indexOf(qs(".unread .cards"));
+                selectedBook = unreadBookList[event.path[index-1].dataset.index]
+            } else {
+                let index = event.path.indexOf(qs(".read .cards"));
+                selectedBook = readBookList[event.path[index-1].dataset.index]
+            }
+
+            openDetailsPopup(selectedBook);
         })
     }
 }
@@ -135,8 +152,7 @@ let setup = () => {
     addPopup.style.display = "none";
     detailsPopup.style.display = "none";
 
-    document.addEventListener("click", (event) => {
-        console.log(event);
+    document.addEventListener("mousedown", (event) => {
         if (popupIsOpen && !(event.path.includes(addPopup) || event.path.includes(detailsPopup))) {
             closePopups();
         }
